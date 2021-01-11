@@ -21,10 +21,12 @@
             "aot": true,
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              { "glob": "data.json", "input": "./", "output": "./assets/" }
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.scss",
+              "node_modules/@fortawesome/fontawesome-free/css/all.min.css"
             ],
             "scripts": []
           },
@@ -88,7 +90,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.scss"
             ],
             "scripts": []
           }
@@ -119,6 +121,15 @@
           }
         }
       }
-    }},
-  "defaultProject": "ngCart1"
+    }
+  },
+  "defaultProject": "ngCart1",
+  "cli": {
+    "analytics": false
+  },
+  "schematics": {
+    "@schematics/angular:component": {
+      "styleext": "scss"
+    }
+  }
 }
